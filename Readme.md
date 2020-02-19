@@ -1,4 +1,7 @@
 # Nextjs-ish Routing with Deno
+Project to emulate Next.js in Deno.js.
+
+By the moment we only have the router based on pages, but more things will be added in the near future.
 
 ## Requirements
 Deno :DDDDD
