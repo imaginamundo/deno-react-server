@@ -4,7 +4,7 @@
 Deno :DDDDD
 
 ## Run
-```make run```
+Type `make` on command line
 
 ## How It Works
 You have the folder `/src/pages` and Deno will walk through the folder and create the routes using Oak (remove Oak after).
