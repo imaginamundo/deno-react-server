@@ -15,4 +15,5 @@ You have the folder `/src/pages` and Deno will walk through the folder and creat
 - [ ] Get initial props;
 - [ ] Client side nav (some route component, or anything);
 - [ ] Serve static files;
+- [ ] Customizable error page;
 - [ ] Other things that I don't remember… :(
