@@ -6,6 +6,8 @@ By the moment we only have the router based on pages, but more things will be ad
 ## Requirements
 Deno :DDDDD
 
+Go to https://deno.land to see how to install Deno.
+
 ## Run
 Type `make` on command line
 
