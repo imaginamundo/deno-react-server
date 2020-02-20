@@ -5,7 +5,7 @@ import routeNotFound from "./route_not_found.js";
 import errorMiddleware from "./middlewares/error.js";
 import logMiddleware from "./middlewares/log.js";
 import timmingMiddleware from "./middlewares/timming.js";
-import publicAssets from './middlewares/publicAssets.js';
+import publicAssets from "./middlewares/publicAssets.js";
 
 const app = new Application();
 

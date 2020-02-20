@@ -12,8 +12,22 @@ Type `make` on command line
 ## Routing
 Deno will walk through the folder `/src/pages` and create the routes using Oak (remove Oak after).
 
+## Public Assets folder
+The folder `/public` in the root of the application will host you static assets.
+
+## Dynamic API routes
+The folder `/src/pages/api` will return an nom component, you can use it as a simple API creation method.
+``` javascript
+export default function handler(context) {
+  return context.response.body = {
+    Hello: "World!",
+    method: context.request.method
+  };
+}
+```
+
 ## Missing pieces:
-- [ ] API routes;
+- [X] API routes;
 - [ ] Styling;
 - [X] Get initial props;
 - [ ] Client side nav (some route component, or anything);

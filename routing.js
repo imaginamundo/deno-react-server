@@ -14,4 +14,10 @@ webRoutes.forEach(async route => {
     });
 });
 
+apiRoutes.forEach(async route => {
+  const file = await import(route.origin);
+  router
+    .all(route.path, file.default);
+});
+
 export default router;

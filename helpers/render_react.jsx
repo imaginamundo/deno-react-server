@@ -5,8 +5,7 @@ import Template from "../components/Template.jsx";
 export async function renderReact(context, Page) {
   let props = {};
   if (Page.getInitialProps) {
-    const initialProps = await Promise.resolve(Page.getInitialProps(context))
-      .then(res => res);
+    const initialProps = await Page.getInitialProps(context);
     props = { ...initialProps };
   }
 
