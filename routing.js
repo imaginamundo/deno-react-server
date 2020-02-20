@@ -9,8 +9,8 @@ const router = new Router();
 webRoutes.forEach(async route => {
   const file = await import(route.origin);
   router
-    .get(route.path, context => {
-      context.response.body = renderReact(file.default);
+    .get(route.path, async (context) => {
+      context.response.body = await renderReact(context, file.default);
     });
 });
 

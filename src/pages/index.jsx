@@ -35,10 +35,4 @@ function Page() {
   );
 }
 
-Page.getInitialProps = function() {
-  return {
-    key: "value"
-  };
-};
-
 export default Page;

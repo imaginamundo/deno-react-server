@@ -9,7 +9,11 @@ function Routes() {
           <a href="/">/</a>
         </li>
         <li>
-          <a href="/dynamic-route">/dynamic-route</a>
+          <a
+            href="/dynamic-route-with-initial-props"
+          >
+            /dynamic-route-with-initial-props
+          </a>
         </li>
         <li>
           <a href="/route-folder">/route-folder</a>

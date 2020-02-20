@@ -15,7 +15,7 @@ You have the folder `/src/pages` and Deno will walk through the folder and creat
 ## Missing pieces:
 - [ ] API routes;
 - [ ] Styling;
-- [ ] Get initial props;
+- [X] Get initial props;
 - [ ] Client side nav (some route component, or anything);
 - [ ] Serve static files;
 - [ ] Customizable error page;
