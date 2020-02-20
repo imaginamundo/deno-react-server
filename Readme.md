@@ -36,6 +36,7 @@ export default function handler(context) {
 - [ ] Client side nav (some route component, or anything);
 - [X] Serve static files;
 - [ ] Customizable error page;
+- [ ] Helpers components (Head, Link);
 - [ ] Other things that I don't remember… :(
 
 ## Future plans
