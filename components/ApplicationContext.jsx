@@ -1,11 +1,18 @@
 import React from "react";
 
 const initialState = {
-  head: null
+  route: null,
+  head: null,
+  setHead: null
 };
+
 const ApplicationContext = React.createContext(initialState);
 
 export function ApplicationContextProvider({ children }) {
+  // const [ head, setHead ] = useState(null);
+  // initialState.head = head;
+  // initialState.setHead = setHead;
+
   return (
     <ApplicationContext.Provider
       value={initialState}

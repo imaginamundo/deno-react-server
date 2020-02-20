@@ -1,7 +1,8 @@
 import { useApplicationContext } from "./ApplicationContext";
 
 function Head({ children }) {
-  const context = useApplicationContext();
+  const { setHead } = useApplicationContext();
+  setHead(children);
   return null;
 }
 

@@ -10,7 +10,7 @@ function Page(props) {
           PokeApi
         </a>.
       </p>
-      <h2>Getting the species details from squirtle</h2>
+      <h2>Getting the species details from squirtle from the server side</h2>
       <pre>{JSON.stringify(props.squirtle?.species, null, "\t")}</pre>
       <Routes />
     </div>

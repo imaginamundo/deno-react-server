@@ -9,21 +9,22 @@ Deno :DDDDD
 ## Run
 Type `make` on command line
 
-## How It Works
-You have the folder `/src/pages` and Deno will walk through the folder and create the routes using Oak (remove Oak after).
+## Routing
+Deno will walk through the folder `/src/pages` and create the routes using Oak (remove Oak after).
 
 ## Missing pieces:
 - [ ] API routes;
 - [ ] Styling;
 - [X] Get initial props;
 - [ ] Client side nav (some route component, or anything);
-- [ ] Serve static files;
+- [X] Serve static files;
 - [ ] Customizable error page;
 - [ ] Other things that I don't remember… :(
 
 ## Future plans
 In the future this project seeks to create a React application with only two folders, and the rest will be under the hood with this repository, example:
 You'll only need the folders that you will use, like the commons:
+- `./public`
 - `./src/pages`
 - `./src/pages/api`
 - `./src/components`
