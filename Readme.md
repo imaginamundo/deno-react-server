@@ -27,6 +27,7 @@ export default function handler(context) {
 ```
 
 ## Missing pieces:
+- [ ] Remove folders `/public` and `/src` (These files are examples to show how this project works);
 - [X] API routes;
 - [ ] Styling;
 - [X] Get initial props;
