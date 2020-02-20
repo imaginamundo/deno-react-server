@@ -2,7 +2,9 @@ import React from "react";
 
 function Html({ children }) {
   return (
-    <html>{children}</html>
+    <html>
+      {children}
+    </html>
   );
 }
 

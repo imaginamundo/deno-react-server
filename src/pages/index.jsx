@@ -6,7 +6,7 @@ function Page() {
     <div>
       <h1>Initial page</h1>
       <p>Test for JSX</p>
-      <h2>Folder Structure:</h2>
+      <h2>Pages Structure:</h2>
       <ul>
         <li>
           <code>/pages</code> · Folder for route creation

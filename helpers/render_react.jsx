@@ -3,11 +3,10 @@ import ReactDOMServer from "react-dom/server";
 import Template from "../components/Template.jsx";
 
 export function renderReact(Page) {
-  return `<!DOCTYPE html>
-  ${ReactDOMServer
+  return ReactDOMServer
     .renderToString(
       <Template>
         <Page />
       </Template>
-    )}`;
+    );
 }
