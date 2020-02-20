@@ -1,5 +1,5 @@
-import React from 'react';
-import Routes from '../components/Routes.jsx';
+import React from "react";
+import Routes from "../components/Routes.jsx";
 
 function Page() {
   return (
@@ -15,13 +15,15 @@ function Page() {
               <code>index.jsx</code> · Route <b>/</b>
             </li>
             <li>
-              <code>/route-folder</code> · Route <b>/route-folder</b> if there's an index.(jsx|tsx)
+              <code>/route-folder</code> · Route <b>/route-folder</b>
+              if there's an index.(jsx|tsx)
               <ul>
                 <li>
                   <code>index.jsx</code> · Route <b>/route-folder</b>
                 </li>
                 <li>
-                  <code>dynamic-inside-folder.jsx</code> · Route <b>/route-folder/dynamic-inside-folder</b>
+                  <code>dynamic-inside-folder.jsx</code> · Route
+                  <b>/route-folder/dynamic-inside-folder</b>
                 </li>
               </ul>
             </li>
@@ -31,7 +33,7 @@ function Page() {
       <Routes />
     </div>
   );
-};
+}
 
 Page.getInitialProps = function() {
   return {

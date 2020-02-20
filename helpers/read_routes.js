@@ -1,6 +1,5 @@
 import { walk } from "fs";
 
-
 function formatRoute(origin) {
   const paths = origin.split("/");
   let [name, extension] = paths[paths.length - 1].split(".");
@@ -13,7 +12,7 @@ function formatRoute(origin) {
 
   const path = "/" + paths.join("/");
   const type = paths[0] === "api" ? "api" : "page";
-  origin = './' + origin;
+  origin = "./" + origin;
 
   return {
     name,
@@ -31,7 +30,7 @@ const apiRoutes = [];
 for await (const file of walk("./src/pages")) {
   if (file.info._isFile) {
     const routeObject = formatRoute(file.filename);
-    if (routeObject.type === 'page') {
+    if (routeObject.type === "page") {
       webRoutes.push(routeObject);
     } else {
       apiRoutes.push(routeObject);

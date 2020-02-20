@@ -1,5 +1,5 @@
-import React from 'react';
-import Routes from '../../components/Routes.jsx';
+import React from "react";
+import Routes from "../../components/Routes.jsx";
 
 function Page() {
   return (
@@ -8,6 +8,6 @@ function Page() {
       <Routes />
     </div>
   );
-};
+}
 
 export default Page;

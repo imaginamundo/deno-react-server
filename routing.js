@@ -1,6 +1,6 @@
 import { Router } from "oak";
 import routes from "./helpers/read_routes.js";
-import { renderReact } from './helpers/render_react.jsx';
+import { renderReact } from "./helpers/render_react.jsx";
 
 const { webRoutes, apiRoutes } = routes;
 

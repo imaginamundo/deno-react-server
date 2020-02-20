@@ -1,22 +1,13 @@
-import React from 'react';
+import React from "react";
 import ReactDOMServer from "react-dom/server";
-
-function Template({ children }) {
-  return (
-    <div>
-      { children }
-    </div>
-  );
-};
+import Template from "../components/Template.jsx";
 
 export function renderReact(Page) {
   return `<!DOCTYPE html>
-  ${
-    ReactDOMServer
+  ${ReactDOMServer
     .renderToString(
       <Template>
         <Page />
       </Template>
-    )
-  }`
-};
+    )}`;
+}
