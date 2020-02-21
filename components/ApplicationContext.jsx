@@ -2,6 +2,7 @@ import React from "react";
 
 const initialState = {
   route: null,
+  setRoute: null,
   head: null,
   setHead: null
 };
@@ -9,9 +10,10 @@ const initialState = {
 const ApplicationContext = React.createContext(initialState);
 
 export function ApplicationContextProvider({ children }) {
-  // const [ head, setHead ] = useState(null);
-  // initialState.head = head;
-  // initialState.setHead = setHead;
+  const [head, setHead] = React.useState(null);
+  const [route, setRoute] = React.useState(null);
+  initialState.head = head;
+  initialState.setHead = setHead;
 
   return (
     <ApplicationContext.Provider
@@ -25,7 +27,7 @@ export function ApplicationContextProvider({ children }) {
   );
 }
 
-// export function useApplicationContext() {
-//     const context = useContext(ApplicationContext);
-//     return context;
-// };
+export function useApplicationContext() {
+  const context = React.useContext(ApplicationContext);
+  return context;
+}

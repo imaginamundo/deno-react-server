@@ -1,5 +1,8 @@
 {
   "imports": {
+    "deno-react-server/head": "./components/Head.jsx",
+    "deno-react-server/context": "./components/ApplicationContext.jsx",
+
     "oak": "https://deno.land/x/oak/mod.ts",
     "fs": "https://deno.land/std/fs/mod.ts",
     "react": "https://dev.jspm.io/react",

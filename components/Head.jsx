@@ -1,4 +1,4 @@
-import { useApplicationContext } from "./ApplicationContext";
+import { useApplicationContext } from "./ApplicationContext.jsx";
 
 function Head({ children }) {
   const { setHead } = useApplicationContext();

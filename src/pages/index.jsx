@@ -1,9 +1,14 @@
 import React from "react";
 import Routes from "../components/Routes.jsx";
 
+import Head from "deno-react-server/head";
+
 function Page() {
   return (
     <div>
+      <Head>
+        <title>Hello Head!</title>
+      </Head>
       <h1>Initial page</h1>
       <p>Test for JSX</p>
       <h2>Folder Structure:</h2>
