@@ -4,4 +4,5 @@ run:
 		--allow-env \
 		--allow-net \
 		--allow-read \
-		main.js
+		--allow-write \
+		mod.js

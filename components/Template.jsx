@@ -18,10 +18,12 @@ function Template({ children, props, routes, currentRoute }) {
         props={props}
         currentRoute={currentRoute}
       >
-        <body id="root">
-          <Route location={currentRoute.path}>
-            {children}
-          </Route>
+        <body>
+          <div id="root">
+            <Route location={currentRoute.path}>
+              {children}
+            </Route>
+          </div>
           {/* Initial props and route */}
           <script dangerouslySetInnerHTML={pageData} />
         </body>

@@ -4,7 +4,7 @@ Project with the objective to copy Next.js functionalities to Deno.js.
 By the moment we only have the router based on pages, but more things will be added in the near future.
 
 ## Requirements
-Deno 0.34.0^
+Deno 0.34.0
 
 Go to https://deno.land to see how to install Deno.
 
@@ -20,6 +20,7 @@ The folder `/public` in the root of the application will host you static assets.
 ## Dynamic API routes
 The folder `/src/pages/api` will return an nom component, you can use it as a simple API creation method.
 ``` javascript
+// index.js
 export default function handler(context) {
   return context.response.body = {
     Hello: "World!",
@@ -27,6 +28,17 @@ export default function handler(context) {
   };
 }
 ```
+
+When you make GET a request at /api it will return
+``` json
+{
+  "Hello": "World!",
+  "method": "GET"
+}
+```
+
+## API Context
+The context param that is received from the handler, is the same that Oak (https://github.com/oakserver/oak) is using.
 
 ## Missing pieces:
 - [ ] Remove folders `/public` and `/src` (These files are examples to show how this project works);

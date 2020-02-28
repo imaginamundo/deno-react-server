@@ -6,6 +6,7 @@ import errorMiddleware from "./middlewares/error.js";
 import logMiddleware from "./middlewares/log.js";
 import timmingMiddleware from "./middlewares/timming.js";
 import publicAssets from "./middlewares/publicAssets.js";
+import "./helpers/bundle_javascript.js";
 
 const app = new Application();
 

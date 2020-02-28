@@ -1,14 +1,18 @@
 import React from "react";
 
 const initialState = {
-  head: null,
+  head: [
+    () => <meta name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+  ],
   setHead: null
 };
 
 const ApplicationContext = React.createContext(initialState);
 
 export function ApplicationContextProvider({ children, props, currentRoute }) {
-  const [head, setHead] = React.useState(null);
+  // TODO: Add logic to replace default heads
+  const [head, setHead] = React.useState(initialState.head);
 
   initialState.head = head;
   initialState.setHead = setHead;
@@ -19,7 +23,9 @@ export function ApplicationContextProvider({ children, props, currentRoute }) {
     >
       <head>
         {/* TODO: add js files (bundled specific page and main) */}
-        {initialState.head}
+        {initialState.head.map(
+          (Option, index) => <Option key={`head-${index}`} />
+        )}
       </head>
       {children}
     </ApplicationContext.Provider>

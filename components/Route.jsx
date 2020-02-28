@@ -1,10 +1,10 @@
 import React from "react";
-import { StaticRouter } from 'react-router-dom';
+import { StaticRouter } from "react-router-dom";
 
 function Route({ children, location }) {
   return (
     <StaticRouter
-      location={ location }
+      location={location}
       context={{}}
     >
       {children}
