@@ -11,36 +11,39 @@ import {
 const root = document.getElementById("root");
 const props = window.initialProps;
 
-async function dynamicImportPage(file) {
-  const Page = await import(file);
-  console.log(Page);
-  return <Page />;
-}
+console.log("Show!");
+console.log(React);
 
-function RouteMap({ routes }) {
-  return (
-    <Switch>
-      {routes.map(route => {
-        return (
-          <Route
-            path={route.path}
-            component={await dynamicImportPage(route.origin)}
-          >
-            {useRouteMatch(route.path) &&
-              dynamicImportPage(route.origin)}
-          </Route>
-        );
-      })}
-    </Switch>
-  );
-}
+// async function dynamicImportPage(file) {
+//   const Page = await import(file);
+//   console.log(Page);
+//   return <Page />;
+// }
 
-ReactDOM.hydrate(
-  <Router>
-    <RouteMap routes={window.__routes} />
-  </Router>,
-  root
-);
+// function RouteMap({ routes }) {
+//   return (
+//     <Switch>
+//       {routes.map(route => {
+//         return (
+//           <Route
+//             path={route.path}
+//             component={await dynamicImportPage(route.origin)}
+//           >
+//             {useRouteMatch(route.path) &&
+//               dynamicImportPage(route.origin)}
+//           </Route>
+//         );
+//       })}
+//     </Switch>
+//   );
+// }
+
+// ReactDOM.hydrate(
+//   <Router>
+//     <RouteMap routes={window.__routes} />
+//   </Router>,
+//   root
+// );
 
 // Clean up
 delete window.__initialProps;

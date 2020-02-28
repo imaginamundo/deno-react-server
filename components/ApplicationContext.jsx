@@ -1,9 +1,25 @@
 import React from "react";
+import { readFileStr } from "fs";
+
+const importMapJSON = await readFileStr("./public/import_map.json");
 
 const initialState = {
   head: [
-    () => <meta name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    () => {
+      const importMap = {
+        __html: importMapJSON
+      };
+      return (
+        <>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <script type="importmap" dangerouslySetInnerHTML={importMap} />
+          <script type="module" src="/.src/main.mjs" />
+        </>
+      );
+    }
   ],
   setHead: null
 };
@@ -24,7 +40,7 @@ export function ApplicationContextProvider({ children, props, currentRoute }) {
       <head>
         {/* TODO: add js files (bundled specific page and main) */}
         {initialState.head.map(
-          (Option, index) => <Option key={`head-${index}`} />
+          (Head, index) => <Head key={`head-${index}`} />
         )}
       </head>
       {children}
