@@ -1,8 +1,6 @@
 import React from "react";
 
 const initialState = {
-  route: null,
-  setRoute: null,
   head: null,
   setHead: null
 };
@@ -11,7 +9,7 @@ const ApplicationContext = React.createContext(initialState);
 
 export function ApplicationContextProvider({ children, props, route }) {
   const [head, setHead] = React.useState(null);
-  const [route, setRoute] = React.useState(null);
+  
   initialState.head = head;
   initialState.setHead = setHead;
 
