@@ -9,7 +9,7 @@ const initialState = {
 
 const ApplicationContext = React.createContext(initialState);
 
-export function ApplicationContextProvider({ children }) {
+export function ApplicationContextProvider({ children, props, route }) {
   const [head, setHead] = React.useState(null);
   const [route, setRoute] = React.useState(null);
   initialState.head = head;
@@ -20,6 +20,7 @@ export function ApplicationContextProvider({ children }) {
       value={initialState}
     >
       <head>
+        {/* TODO: add js files (bundled specific page and main) */}
         {initialState.head}
       </head>
       {children}

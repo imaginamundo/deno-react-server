@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import Template from "../components/Template.jsx";
 
-export async function renderReact(context, Page) {
+export async function renderReact(Page, context, route) {
   let props = {};
   if (Page.getInitialProps) {
     const initialProps = await Page.getInitialProps(context);
@@ -10,8 +10,11 @@ export async function renderReact(context, Page) {
   }
 
   return ReactDOMServer
-    .renderToString(
-      <Template>
+    .renderToStaticMarkup(
+      <Template
+        props={props}
+        route={route}
+      >
         <Page {...props} />
       </Template>
     );

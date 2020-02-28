@@ -4,4 +4,4 @@ run:
 		--allow-env \
 		--allow-net \
 		--allow-read \
-		main.js 
+		main.js

@@ -54,4 +54,10 @@ function Page() {
   );
 }
 
+Page.getInitialProps = () => {
+  return {
+    hello: "world!"
+  };
+};
+
 export default Page;

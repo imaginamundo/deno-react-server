@@ -3,6 +3,6 @@ export default async ({ response }, next) => {
     await next();
   } catch (err) {
     response.status = 500;
-    response.body = { msg: err.message };
+    response.body = { message: err.message };
   }
 };

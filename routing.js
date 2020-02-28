@@ -10,7 +10,7 @@ webRoutes.forEach(async route => {
   const file = await import(route.origin);
   router
     .get(route.path, async (context) => {
-      context.response.body = await renderReact(context, file.default);
+      context.response.body = await renderReact(file.default, context, route);
     });
 });
 

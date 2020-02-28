@@ -6,6 +6,7 @@
     "oak": "https://deno.land/x/oak/mod.ts",
     "fs": "https://deno.land/std/fs/mod.ts",
     "react": "https://dev.jspm.io/react",
+    "react-dom": "https://dev.jspm.io/react-dom",
     "react-dom/server": "https://dev.jspm.io/react-dom/server"
   }
 }
