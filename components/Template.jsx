@@ -12,11 +12,6 @@ function Template({ children, props, routes, currentRoute }) {
     ].join("")
   };
 
-  /**
-   * Missing static route
-   */
-
-  console.log(currentRoute);
   return (
     <Html>
       <ApplicationContextProvider
