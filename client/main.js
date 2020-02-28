@@ -11,7 +11,6 @@ import {
 const root = document.getElementById("root");
 const props = window.initialProps;
 
-console.log("Show!");
 console.log(React);
 
 // async function dynamicImportPage(file) {
