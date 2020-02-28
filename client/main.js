@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// Verify path after bundle files (it is located at window.__route)
-import Page from "??";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-/**
- * Hydrate React
- */
+// Hydrate
 const root = document.getElementById("root");
 const props = window.initialProps;
 
 // Clean up
 delete window.__initialProps;
-delete window.__route;
+delete window.__routes;
+delete window.__currentRoute;
 
 ReactDOM.hydrate(<Page {...props} />, root);

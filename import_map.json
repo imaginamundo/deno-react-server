@@ -7,6 +7,7 @@
     "fs": "https://deno.land/std/fs/mod.ts",
     "react": "https://dev.jspm.io/react",
     "react-dom": "https://dev.jspm.io/react-dom",
-    "react-dom/server": "https://dev.jspm.io/react-dom/server"
+    "react-dom/server": "https://dev.jspm.io/react-dom/server",
+    "react-router-dom": "https://cdn.pika.dev/react-router-dom@^5.1.2"
   }
 }

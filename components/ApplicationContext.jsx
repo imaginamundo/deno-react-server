@@ -7,9 +7,9 @@ const initialState = {
 
 const ApplicationContext = React.createContext(initialState);
 
-export function ApplicationContextProvider({ children, props, route }) {
+export function ApplicationContextProvider({ children, props, currentRoute }) {
   const [head, setHead] = React.useState(null);
-  
+
   initialState.head = head;
   initialState.setHead = setHead;
 
