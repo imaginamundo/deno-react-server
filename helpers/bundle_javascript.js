@@ -36,18 +36,55 @@ for await (const file of walk("./src")) {
 await copy("./client/main.js", "./public/.src/main.mjs", { overwrite: true });
 console.log("./public/.src/main.js generated");
 
+
+// Download Modules
+if (!await exists("./public/.modules")) {
+  await Deno.mkdir("./public/.modules", { recursive: true });
+}
+
+// React
+const react = await fetch("https://dev.jspm.io/react@16.13.0")
+  .then(res => res.text());
+
+await writeFileStr(
+  "./public/.modules/react@16.13.0.mjs",
+  react
+);
+
+// React dom
+const reactDom = await fetch("https://dev.jspm.io/react-dom@16.13.0")
+  .then(res => res.text());
+
+await writeFileStr(
+  "./public/.modules/react-dom@16.13.0.mjs",
+  reactDom
+);
+
+// React router dom
+const reactRouterDom = await fetch(
+  "https://cdn.pika.dev/react-router-dom@5.1.2"
+)
+  .then(res => res.text());
+
+await writeFileStr(
+  "./public/.modules/react-router-dom@5.1.2.mjs",
+  reactRouterDom
+);
+
 // Generate import_map.json
 const importMap = {
   imports: {
-    "react": "https://dev.jspm.io/react@16.13.0",
-    "react-dom": "https://dev.jspm.io/react-dom@16.13.0",
-    "react-router-dom": "https://cdn.pika.dev/react-router-dom@^5.1.2"
+    "react": "/modules/react@16.13.0.js",
+    "react-dom": "/modules/react-dom@16.13.0.js",
+    "react-router-dom": "/react-router-dom@5.1.2.js"
   }
 };
+
 await writeFileStr(
   "./public/import_map.json",
   JSON.stringify(importMap, null, 2)
 );
+
 console.log("./public/import_map.json generated");
 
 export default {};

@@ -75,4 +75,5 @@ $RECYCLE.BIN/
 
 # Deno React Server
 public/.src
+public/.modules
 public/import_map.json

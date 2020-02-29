@@ -1,7 +1,10 @@
 import React from "react";
-import { readFileStr } from "fs";
+import { readFileStr, exists } from "fs";
 
-const importMapJSON = await readFileStr("./public/import_map.json");
+let importMapJSON = '{}';
+if (await exists("./public/import_map.json")) {
+  importMapJSON = await readFileStr("./public/import_map.json");
+}
 
 const initialState = {
   head: [
