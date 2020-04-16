@@ -17,13 +17,13 @@ function Page(props) {
   );
 }
 
-Page.getInitialProps = async function(context) {
+Page.getInitialProps = async function (context) {
   const squirtle = await fetch("https://pokeapi.co/api/v2/pokemon/squirtle")
-    .then(res => res.json())
+    .then((res) => res.json())
     .catch(() => ({}));
 
   return {
-    squirtle
+    squirtle,
   };
 };
 

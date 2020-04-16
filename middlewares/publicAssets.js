@@ -1,7 +1,7 @@
 import { send } from "oak";
 
-export default async context => {
+export default async (context) => {
   await send(context, context.request.path, {
-    root: `${Deno.cwd()}/public`
+    root: `${Deno.cwd()}/public`,
   });
 };

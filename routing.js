@@ -6,20 +6,21 @@ const { webRoutes, apiRoutes } = routes;
 
 const router = new Router();
 
-webRoutes.forEach(async route => {
+webRoutes.forEach(async (route) => {
   const file = await import(route.origin);
   router
     .get(route.path, async (context) => {
+      console.log(route.path);
       context.response.body = await renderReact(
         file.default,
         context,
         webRoutes,
-        route
+        route,
       );
     });
 });
 
-apiRoutes.forEach(async route => {
+apiRoutes.forEach(async (route) => {
   const file = await import(route.origin);
   router
     .all(route.path, file.default);

@@ -1,48 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useRouteMatch
-} from "react-router-dom";
-
-// Hydrate
-const root = document.getElementById("root");
-const props = window.initialProps;
+const routes = window.__routes;
+const currentRoute = window.__currentRoute;
+const props = window.__initialProps;
 
 console.log(React);
+console.log(ReactDOM);
+console.log(routes);
+console.log(currentRoute);
+console.log(props);
 
-// async function dynamicImportPage(file) {
-//   const Page = await import(file);
-//   console.log(Page);
-//   return <Page />;
-// }
+async function dynamicImportPage(file) {
+  console.log(file);
 
-// function RouteMap({ routes }) {
-//   return (
-//     <Switch>
-//       {routes.map(route => {
-//         return (
-//           <Route
-//             path={route.path}
-//             component={await dynamicImportPage(route.origin)}
-//           >
-//             {useRouteMatch(route.path) &&
-//               dynamicImportPage(route.origin)}
-//           </Route>
-//         );
-//       })}
-//     </Switch>
-//   );
-// }
+  const filePath = file
+    .replace('.', '/bundles')
+    .replace('.jsx', '.js');
 
-// ReactDOM.hydrate(
-//   <Router>
-//     <RouteMap routes={window.__routes} />
-//   </Router>,
-//   root
-// );
+  console.log(filePath);
+
+  const { default: Page } = await import(filePath);
+  console.log(Page);
+
+  ReactDOM.hydrate(
+    React.createElement(Page, props, null),
+    document.getElementById('root')
+  );
+}
+
+dynamicImportPage(currentRoute.origin);
 
 // Clean up
 delete window.__initialProps;

@@ -3,12 +3,12 @@
     "deno-react-server/head": "./components/Head.jsx",
     "deno-react-server/context": "./components/ApplicationContext.jsx",
 
-    "oak": "https://deno.land/x/oak@v3.1.0/mod.ts",
-    "fs": "https://deno.land/std@v0.34.0/fs/mod.ts",
+    "oak": "https://deno.land/x/oak@v3.7.0/mod.ts",
+    "fs": "https://deno.land/std@v0.40.0/fs/mod.ts",
 
-    "react": "https://dev.jspm.io/react@16.13.0",
-    "react-dom": "https://dev.jspm.io/react-dom@16.13.0",
-    "react-dom/server": "https://dev.jspm.io/react-dom@16.13.0/server",
+    "react": "https://dev.jspm.io/react@16.13.1",
+    "react-dom": "https://dev.jspm.io/react-dom@16.13.1",
+    "react-dom/server": "https://dev.jspm.io/react-dom@16.13.1/server",
     "react-router-dom": "https://cdn.pika.dev/react-router-dom@^5.1.2"
   }
 }

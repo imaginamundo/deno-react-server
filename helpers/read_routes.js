@@ -19,7 +19,7 @@ function formatRoute(origin) {
     path,
     extension,
     origin,
-    type
+    type,
   };
 }
 
@@ -28,7 +28,7 @@ const apiRoutes = [];
 
 // Walk thought pages
 for await (const file of walk("./src/pages")) {
-  if (file.info._isFile) {
+  if (file.info.isFile()) {
     const routeObject = formatRoute(file.filename);
     if (routeObject.type === "page") {
       webRoutes.push(routeObject);

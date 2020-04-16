@@ -1,7 +1,7 @@
 import React from "react";
 import { readFileStr, exists } from "fs";
 
-let importMapJSON = '{}';
+let importMapJSON = "{}";
 if (await exists("./public/import_map.json")) {
   importMapJSON = await readFileStr("./public/import_map.json");
 }
@@ -10,7 +10,7 @@ const initialState = {
   head: [
     () => {
       const importMap = {
-        __html: importMapJSON
+        __html: importMapJSON,
       };
       return (
         <>
@@ -22,9 +22,9 @@ const initialState = {
           <script type="module" src="/.src/main.mjs" />
         </>
       );
-    }
+    },
   ],
-  setHead: null
+  setHead: null,
 };
 
 const ApplicationContext = React.createContext(initialState);
@@ -43,7 +43,7 @@ export function ApplicationContextProvider({ children, props, currentRoute }) {
       <head>
         {/* TODO: add js files (bundled specific page and main) */}
         {initialState.head.map(
-          (Head, index) => <Head key={`head-${index}`} />
+          (Head, index) => <Head key={`head-${index}`} />,
         )}
       </head>
       {children}

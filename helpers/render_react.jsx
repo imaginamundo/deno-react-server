@@ -17,6 +17,6 @@ export async function renderReact(Page, context, routes, currentRoute) {
         currentRoute={currentRoute}
       >
         <Page {...props} />
-      </Template>
+      </Template>,
     );
 }
