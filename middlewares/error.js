@@ -1,8 +1,9 @@
-export default async ({ response }, next) => {
+export default async (context, next) => {
   try {
     await next();
   } catch (err) {
-    response.status = 500;
-    response.body = { message: err.message };
+    // console.log(err);
+    context.response.status = 500;
+    context.response.body = err.message;
   }
 };

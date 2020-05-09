@@ -1,0 +1,11 @@
+{
+  "imports": {
+    "fs": "https://deno.land/std@v0.42.0/fs/mod.ts",
+    "react": "https://unpkg.com/es-react@16.12.0/index.js",
+    "react-dom/server": "https://dev.jspm.io/react-dom@16.12.0/server",
+    "react-router-dom": "https://cdn.pika.dev/react-router-dom@^5.1.2",
+    "server": "https://deno.land/std@v0.42.0/http/server.ts",
+    "path": "https://deno.land/std@v0.42.0/path/mod.ts",
+    "oak": "https://deno.land/x/oak/mod.ts"
+  }
+}

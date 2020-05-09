@@ -1,8 +1,2 @@
 run:
-	deno \
-		--importmap=import_map.json \
-		--allow-env \
-		--allow-net \
-		--allow-read \
-		--allow-write \
-		mod.js
+	deno run --allow-read --allow-write --allow-net --importmap=importmap.json --unstable --reload mod.js

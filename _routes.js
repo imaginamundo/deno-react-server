@@ -12,7 +12,8 @@ function formatRoute(origin) {
 
   const path = "/" + paths.join("/");
   const type = paths[0] === "api" ? "api" : "page";
-  origin = "./" + origin;
+
+  origin = "/" + origin;
 
   return {
     name,
@@ -23,19 +24,20 @@ function formatRoute(origin) {
   };
 }
 
-const webRoutes = [];
+const pageRoutes = [];
 const apiRoutes = [];
 
 // Walk thought pages
 for await (const file of walk("./src/pages")) {
-  if (file.info.isFile()) {
-    const routeObject = formatRoute(file.filename);
+  if (file.isFile) {
+    const routeObject = formatRoute(file.path);
     if (routeObject.type === "page") {
-      webRoutes.push(routeObject);
+      pageRoutes.push(routeObject);
     } else {
       apiRoutes.push(routeObject);
     }
   }
 }
 
-export default { webRoutes, apiRoutes };
+export { pageRoutes, apiRoutes };
+export default { pageRoutes, apiRoutes };

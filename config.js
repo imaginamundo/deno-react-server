@@ -1,4 +1,6 @@
-const env = Deno.env();
+const config = {
+  APP_HOST: "http://127.0.0.1", // Only show in console after running project
+  APP_PORT: 8080,
+};
 
-export const APP_HOST = env.APP_HOST || "127.0.0.1";
-export const APP_PORT = env.APP_PORT || 8080;
+export default config;

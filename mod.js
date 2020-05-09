@@ -1,30 +1,31 @@
 import { Application } from "oak";
-import { APP_HOST, APP_PORT } from "./config.js";
-import routing from "./routing.js";
-import routeNotFound from "./route_not_found.js";
-import errorMiddleware from "./middlewares/error.js";
-import logMiddleware from "./middlewares/log.js";
-import timmingMiddleware from "./middlewares/timming.js";
+
+import config from "./config.js";
+import error from "./middlewares/error.js";
+import log from "./middlewares/log.js";
+import timming from "./middlewares/timming.js";
+import router from "./middlewares/router.js";
 import publicAssets from "./middlewares/publicAssets.js";
-import "./helpers/bundle_javascript.js";
+// import notFound from "./middlewares/notFound.js";
 
 const app = new Application();
 
 // Middlewares
-app.use(errorMiddleware);
-app.use(logMiddleware);
-app.use(timmingMiddleware);
+app.use(log);
+app.use(timming);
+app.use(error);
 
-// Default routes
-app.use(routing.routes());
-app.use(routing.allowedMethods());
+// Router
+app.use(router.routes());
+app.use(router.allowedMethods());
 
-// Static assets
+// Public
 app.use(publicAssets);
 
 // Not found
-app.use(routeNotFound);
+// app.use(notFound);
 
-console.log(`Listening on port ${APP_HOST}:${APP_PORT}`);
-await app.listen({ port: APP_PORT });
+
+console.log(`Listening on ${config.APP_HOST}:${config.APP_PORT}`);
+await app.listen({ port: config.APP_PORT });
 console.log("Finished");

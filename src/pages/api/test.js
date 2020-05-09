@@ -1,6 +1,6 @@
-export default function handler(context) {
+export default function (context) {
   return context.response.body = {
-    Hello: "World!",
+    hello: "world!",
     method: context.request.method,
   };
 }

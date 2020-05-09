@@ -4,12 +4,14 @@ Project with the objective to copy Next.js functionalities to Deno.js.
 By the moment we only have the router based on pages, but more things will be added in the near future.
 
 ## Requirements
-Deno 0.40.0
+Deno 0.42.0
 
 Go to https://deno.land to see how to install Deno.
 
 ## Run
 Type `make` on command line
+
+## Current folder public and src are only for testing purposes!
 
 ## Routing
 Deno will walk through the folder `/src/pages` and create the routes using Oak (remove Oak after).
@@ -21,7 +23,7 @@ The folder `/public` in the root of the application will host you static assets.
 The folder `/src/pages/api` will return an nom component, you can use it as a simple API creation method.
 ``` javascript
 // index.js
-export default function handler(context) {
+export default function (context) {
   return context.response.body = {
     Hello: "World!",
     method: context.request.method
@@ -44,7 +46,7 @@ The context param that is received from the handler, is the same that Oak (https
 - [ ] Remove folders `/public` and `/src` (These files are examples to show how this project works);
 - [X] API routes;
 - [ ] Styling;
-- [X] Get initial props;
+- [ ] Get initial props;
 - [ ] Client side nav (some route component, or anything);
 - [X] Serve static files;
 - [ ] Customizable error page;
@@ -58,6 +60,6 @@ You'll only need the folders that you will use, like the commons:
 - `./src/pages`
 - `./src/pages/api`
 - `./src/components`
-- `.import_map.json`
+- `.importmap.json`
 
 Add and with only these folders, run the command `deno react-server`, and then, Deno will make everything works out of the box, without configuring anything else.
