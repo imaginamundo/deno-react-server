@@ -43,6 +43,7 @@ When you make GET a request at /api it will return
 The context param that is received from the handler, is the same that Oak (https://github.com/oakserver/oak) is using.
 
 ## Missing pieces:
+- [ ] Fix React Hooks (Error from different versions for React, ReactDOM and ReactDOMServer);
 - [ ] Remove folders `/public` and `/src` (These files are examples to show how this project works);
 - [X] API routes;
 - [ ] Styling;

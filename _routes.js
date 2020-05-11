@@ -6,7 +6,7 @@ function formatRoute(origin) {
 
   paths.shift(); // Remove /src
   paths.shift(); // Remove /pages
-  paths.pop(); // Remove file
+  paths.pop();   // Remove file
 
   if (name !== "index") paths.push(name); // Add name to path without index if isn't index
 

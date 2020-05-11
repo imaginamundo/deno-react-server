@@ -4,15 +4,15 @@ import { pageRoutes } from './_routes.js';
  * The was an error trying to bunddle React and React DOM from pika.dev
  */
 
-// const [browserDiagnostics, browserOutput] = await Deno.bundle(
-//   "./react/browser.jsx",
-// );
+const [browserDiagnostics, browserOutput] = await Deno.bundle(
+  "./react/browser.jsx",
+);
 
 const encoder = new TextEncoder();
 
 await Deno.mkdir("public", { recursive: true });
 
-// await Deno.writeFile("public/src/bundle.js", encoder.encode(browserOutput));
+await Deno.writeFile("public/.src/bundle.js", encoder.encode(browserOutput));
 
 pageRoutes.forEach(async (page) => {
   let importPath = page.path;

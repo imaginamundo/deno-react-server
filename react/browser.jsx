@@ -1,18 +1,22 @@
-import React, { ReactDOM } from "react";
-import { BrowserRouter } from "react-router-dom";
+import ReactDOM from 'react-dom';
+// import { BrowserRouter } from "react-router-dom";
 
 window.addEventListener("DOMContentLoaded", async () => {
-  ReactDOM.hydrate(
-    <BrowserRouter>
-      {__routes.map((route) => {
-        const { default: Page } = await import(`${route.origin}`);
-        <Page props={initialProps} />;
-      })}
-    </BrowserRouter>,
-    document.getElementById("root"),
-  );
+  let routeUrl = `./pages${__route.path}`;
+  if (__route.path.endsWith('/')) {
+    routeUrl = routeUrl + __route.name
+  }
 
-  delete window.__initialProps;
-  delete window.__routes;
-  delete window.__route;
+  routeUrl = routeUrl + '.js';
+
+  const { default: Page } = await import(`${routeUrl}`);
+  ReactDOM.hydrate(
+    // <BrowserRouter>
+    //   {__routes.map((route) => {
+    //     return <Page props={initialProps} />;
+    //   })}
+    // </BrowserRouter>,
+    Page({ props: __initialProps }),
+    document.getElementById('root'),
+  );
 });
