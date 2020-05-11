@@ -3,7 +3,7 @@ import React from "react";
 function Link({ children, href }) {
   function goTo(e) {
     e.preventDefault();
-    alert('Click on fragment')
+    alert("Click on fragment");
   }
 
   return (

@@ -14,7 +14,7 @@ pageRoutes.forEach(async (route) => {
         {
           props: {},
           route,
-          routes: pageRoutes
+          routes: pageRoutes,
         },
       );
     });

@@ -1,13 +1,13 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 // import { BrowserRouter } from "react-router-dom";
 
 window.addEventListener("DOMContentLoaded", async () => {
   let routeUrl = `./pages${__route.path}`;
-  if (__route.path.endsWith('/')) {
-    routeUrl = routeUrl + __route.name
+  if (__route.path.endsWith("/")) {
+    routeUrl = routeUrl + __route.name;
   }
 
-  routeUrl = routeUrl + '.js';
+  routeUrl = routeUrl + ".js";
 
   const { default: Page } = await import(`${routeUrl}`);
   ReactDOM.hydrate(
@@ -17,6 +17,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     //   })}
     // </BrowserRouter>,
     Page({ props: __initialProps }),
-    document.getElementById('root'),
+    document.getElementById("root"),
   );
 });
