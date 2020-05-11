@@ -7,6 +7,7 @@ import timming from "./middlewares/timming.js";
 import router from "./middlewares/router.js";
 import publicAssets from "./middlewares/publicAssets.js";
 // import notFound from "./middlewares/notFound.js";
+import './_bundler.js';
 
 const app = new Application();
 
@@ -28,4 +29,3 @@ app.use(publicAssets);
 
 console.log(`Listening on ${config.APP_HOST}:${config.APP_PORT}`);
 await app.listen({ port: config.APP_PORT });
-console.log("Finished");

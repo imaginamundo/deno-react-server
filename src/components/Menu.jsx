@@ -17,13 +17,6 @@ function Menu() {
       <p>
         <a href="/api/test">- /api/test</a>
       </p>
-      <p><b>Public routes</b></p>
-      <p>
-        <a href="/test.html">- /test.html</a>
-      </p>
-      <p>
-        <a href="/hello/world.js">- /hello/world.js</a>
-      </p>
     </nav>
   );
 }
