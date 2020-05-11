@@ -2,10 +2,8 @@
   "imports": {
     "fs": "https://deno.land/std@v0.42.0/fs/mod.ts",
     "oak": "https://deno.land/x/oak/mod.ts",
-    "react": "./temp/react.js",
-    "react-weird": "https://unpkg.com/es-react@16.12.0/index.js",
-    "react-dom": "./temp/react-dom.js",
-    "react-dom/server": "./temp/react-dom-server-browser.js",
-    "react-router-dom": "https://cdn.pika.dev/react-router-dom@^5.1.2"
+    "react": "./_temp/react.js",
+    "react-dom": "./_temp/react-dom.js",
+    "react-dom/server": "./_temp/react-dom-server-browser.js"
   }
 }

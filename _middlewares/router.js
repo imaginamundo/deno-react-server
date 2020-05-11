@@ -1,6 +1,6 @@
 import { Router } from "oak";
 import { pageRoutes, apiRoutes } from "../_routes.js";
-import renderToString from "../react/renderToString.jsx";
+import renderToString from "../_react/renderToString.jsx";
 
 const router = new Router();
 

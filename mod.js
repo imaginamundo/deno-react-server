@@ -1,12 +1,12 @@
 import { Application } from "oak";
 
 import config from "./config.js";
-import error from "./middlewares/error.js";
-import log from "./middlewares/log.js";
-import timming from "./middlewares/timming.js";
-import router from "./middlewares/router.js";
-import publicAssets from "./middlewares/publicAssets.js";
-// import notFound from "./middlewares/notFound.js";
+import error from "./_middlewares/error.js";
+import log from "./_middlewares/log.js";
+import timming from "./_middlewares/timming.js";
+import router from "./_middlewares/router.js";
+import publicAssets from "./_middlewares/publicAssets.js";
+// import notFound from "./_middlewares/notFound.js";
 import "./_bundler.js";
 
 const app = new Application();

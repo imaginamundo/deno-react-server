@@ -5,7 +5,7 @@ import { pageRoutes } from "./_routes.js";
  */
 
 const [browserDiagnostics, browserOutput] = await Deno.bundle(
-  "./react/browser.jsx",
+  "./_react/browser.jsx",
 );
 
 const encoder = new TextEncoder();
