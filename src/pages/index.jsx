@@ -8,11 +8,15 @@ function Page({ props }) {
       <Menu />
       <h1>Hello world!</h1>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nulla ullam facilis nisi, possimus distinctio! Ipsa, sapiente sequi libero minus quas, iure doloremque quos, vitae hic autem voluptates amet doloribus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+        nulla ullam facilis nisi, possimus distinctio! Ipsa, sapiente sequi
+        libero minus quas, iure doloremque quos, vitae hic autem voluptates amet
+        doloribus!
       </p>
       <h2>Get Initial Props</h2>
       <p>In the function add getInitialProps to your page component, like:</p>
-      <pre>{`import React from 'react';
+      <pre>
+        {`import React from 'react';
 
 function Page({ props }) {
   return <pre>{ JSON.stringify(props, null, 2) }</pre>;
@@ -24,10 +28,13 @@ Page.getInitialProps = (context) => {
   };
 }
 
-export default Page;`
-}</pre>
-      <p>This will give you the props from the server that you returned on getInitialProps function.</p>
-      <pre>{ JSON.stringify(props, null, 2) }</pre>
+export default Page;`}
+      </pre>
+      <p>
+        This will give you the props from the server that you returned on
+        getInitialProps function.
+      </p>
+      <pre>{JSON.stringify(props, null, 2)}</pre>
       <h2>useState hook test</h2>
       <p>
         Clicked {counter} times.
@@ -43,8 +50,8 @@ export default Page;`
 
 Page.getInitialProps = (context) => {
   return {
-    hello: 'world!'
+    hello: "world!",
   };
-}
+};
 
 export default Page;

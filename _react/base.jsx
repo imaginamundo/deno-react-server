@@ -23,8 +23,10 @@ function Base({ children, props, routes, route }) {
     <html>
       <head>
         <script dangerouslySetInnerHTML={pageData} />
-        <script type="module"
-          src={`/.src/pages${verifiedPath}${route.name}.js`} />
+        <script
+          type="module"
+          src={`/.src/pages${verifiedPath}${route.name}.js`}
+        />
         <script type="module" src="/.src/bundle.js" />
       </head>
       <body>
