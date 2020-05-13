@@ -1,7 +1,5 @@
 import React from "react";
-// import ReactDOMServer from "react-dom/server";
 import ReactDOMServerBrowser from "react-dom/server";
-// import { StaticRouter } from "react-router-dom";
 
 import Base from "./base.jsx";
 

@@ -47,7 +47,9 @@ The context param that is received from the handler, is the same that Oak (https
 - [ ] Remove folders `/public` and `/src` (These files are examples to show how this project works);
 - [X] API routes;
 - [ ] Styling;
-- [ ] Get initial props;
+- [X] Get initial props;
+- [ ] Get static props;
+- [ ] Get server side props;
 - [ ] Client side nav (some route component, or anything);
 - [X] Serve static files;
 - [ ] Customizable error page;

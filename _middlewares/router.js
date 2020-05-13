@@ -9,10 +9,17 @@ pageRoutes.forEach(async (route) => {
 
   router
     .get(route.path, async (context) => {
+      let props;
+      if (file.default.getInitialProps) {
+        props = await file.default.getInitialProps(context);
+      } else {
+        props = {};
+      }
+
       context.response.body = await renderToString(
         file.default,
         {
-          props: {},
+          props,
           route,
           routes: pageRoutes,
         },

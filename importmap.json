@@ -1,6 +1,6 @@
 {
   "imports": {
-    "fs": "https://deno.land/std@v0.42.0/fs/mod.ts",
+    "fs": "https://deno.land/std@v0.50.0/fs/mod.ts",
     "oak": "https://deno.land/x/oak/mod.ts",
     "react": "./_temp/react.js",
     "react-dom": "./_temp/react-dom.js",
