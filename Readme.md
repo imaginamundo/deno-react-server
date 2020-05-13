@@ -22,7 +22,7 @@ The folder `/public` in the root of the application will host you static assets.
 ## Initial Props (only server side, for now)
 You can get props from server (while we can't figure out es react, react-dom, react-dom/server) and use on your application.
 
-```
+``` javascript
 import React from 'react';
 
 function Page({ props }) {
