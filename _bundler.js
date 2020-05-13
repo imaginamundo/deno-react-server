@@ -1,18 +1,34 @@
+import { exists } from "fs";
 import { pageRoutes } from "./_routes.js";
-
-/**
- * The was an error trying to bunddle React and React DOM from pika.dev
- */
 
 const [browserDiagnostics, browserOutput] = await Deno.bundle(
   "./_react/browser.jsx",
 );
 
+let ErrorPage;
+const customError = await exists("src/pages/_error.jsx");
+
+if (customError) {
+  const [customErrorPageDiagnostics, customErrorPageOutput] = await Deno.bundle(
+    "src/pages/_error.jsx",
+  )
+  ErrorPage = customErrorPageOutput;
+} else {
+  const [errorPageDiagnostics, errorPageOutput] = await Deno.bundle(
+    "_react/components/Error.jsx",
+  );
+  ErrorPage = errorPageOutput;
+}
+
 const encoder = new TextEncoder();
 
-await Deno.mkdir("public", { recursive: true });
+await Deno.mkdir("public/.src/pages", { recursive: true });
 
 await Deno.writeFile("public/.src/bundle.js", encoder.encode(browserOutput));
+await Deno.writeFile(
+  "public/.src/pages/_error.js",
+  encoder.encode(ErrorPage),
+);
 
 pageRoutes.forEach(async (page) => {
   let importPath = page.path;

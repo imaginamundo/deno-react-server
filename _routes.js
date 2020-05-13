@@ -1,6 +1,15 @@
 import { walk } from "fs";
 
 function formatRoute(origin) {
+  console.log(origin);
+  const pathsToIgnore = [
+    "src/pages/_error.jsx",
+  ];
+
+  if (pathsToIgnore.includes(origin)) {
+    return null;
+  }
+
   const paths = origin.split("/");
   let [name, extension] = paths[paths.length - 1].split(".");
 
@@ -31,10 +40,12 @@ const apiRoutes = [];
 for await (const file of walk("./src/pages")) {
   if (file.isFile) {
     const routeObject = formatRoute(file.path);
-    if (routeObject.type === "page") {
-      pageRoutes.push(routeObject);
-    } else {
-      apiRoutes.push(routeObject);
+    if (routeObject) {
+      if (routeObject.type === "page") {
+        pageRoutes.push(routeObject);
+      } else {
+        apiRoutes.push(routeObject);
+      }
     }
   }
 }

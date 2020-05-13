@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     //     return <Page props={initialProps} />;
     //   })}
     // </BrowserRouter>,
-    <Page props={ __initialProps } />,
+    <Page props={__initialProps} />,
     // Page({ props: __initialProps }),
     document.getElementById("root"),
   );

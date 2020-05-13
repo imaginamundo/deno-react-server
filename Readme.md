@@ -42,6 +42,21 @@ On this example, you can get the object returned from function getInitialProps a
 
 The context parameter that you get it's the default context that you get from Oak (https://oakserver.github.io/oak/) module.
 
+## Customizable error page
+Just create a page at root of `/src/public` with the name `_error.jsx`. The content inside that page, will be your new error page.
+
+When creating an error page, you will get an error object inside props, see example:
+
+``` javascript
+import React from 'react';
+
+function CustomError({ props }) {
+  return <h1>{ props.error.status } - { props.error.message }</h1>
+}
+
+export default CustomError;
+```
+
 ## Dynamic API routes
 The folder `/src/pages/api` will return an nom component, you can use it as a simple API creation method.
 ``` javascript
@@ -67,7 +82,6 @@ The context param that is received from the handler, is the same that Oak (https
 
 ## Missing pieces:
 - [ ] Fix React Hooks (Error from different versions for React, ReactDOM and ReactDOMServer);
-- [ ] Remove folders `/public` and `/src` (These files are examples to show how this project works);
 - [X] API routes;
 - [ ] Styling;
 - [X] Get initial props;
@@ -75,9 +89,10 @@ The context param that is received from the handler, is the same that Oak (https
 - [ ] Get server side props;
 - [ ] Client side nav (react-router and fix React versions using esm);
 - [X] Serve static files;
-- [ ] Customizable error page;
+- [X] Customizable error page;
 - [ ] Helpers components (Head, Link);
 - [ ] Helper functions (Router, useRouter, etc…)
+- [ ] Remove folders `/public` and `/src` (These files are examples to show how this project works);
 
 ## Future plans
 In the future this project seeks to create a React application with only two folders, and the rest will be under the hood with this repository, example:
