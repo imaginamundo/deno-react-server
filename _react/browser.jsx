@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import React, { ReactDOM } from "react";
 // import { BrowserRouter } from "react-router-dom";
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -16,7 +16,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     //     return <Page props={initialProps} />;
     //   })}
     // </BrowserRouter>,
-    Page({ props: __initialProps }),
+    <Page props={ __initialProps } />,
+    // Page({ props: __initialProps }),
     document.getElementById("root"),
   );
 });

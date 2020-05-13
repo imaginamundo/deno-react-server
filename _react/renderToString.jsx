@@ -1,11 +1,11 @@
 import React from "react";
-import ReactDOMServerBrowser from "react-dom/server";
+import ReactDomServer from "react-dom/server";
 
 import Base from "./base.jsx";
 
 function renderToString(Page, { props, route, routes }) {
-  const context = {};
-  return ReactDOMServerBrowser.renderToStaticMarkup(
+  // const context = {};
+  return ReactDomServer.renderToString(
     <Base props={props} route={route} routes={routes}>
       {/* <StaticRouter url={route.path} context={context}> */}
       <Page props={props} />
