@@ -6,6 +6,7 @@ export default async (context, next) => {
     await next();
   } catch (err) {
     let props;
+
     if (Error.getInitialProps) {
       await file.default.getInitialProps(context)
         .then((res) => props = res)
@@ -21,13 +22,14 @@ export default async (context, next) => {
         return null;
       });
 
-    console.log(customError);
-
     context.response.status = err.status;
     context.response.body = await renderToString(
       customError || Error,
       {
-        props: { ...props, error: err },
+        props: { ...props, error: {
+          status: err.status,
+          message: err.message
+        } },
         route: {
           name: "error",
           path: "/_error",

@@ -1,7 +1,7 @@
 {
   "imports": {
-    "fs": "https://deno.land/std@v0.50.0/fs/mod.ts",
-    "oak": "https://deno.land/x/oak/mod.ts",
+    "fs": "https://deno.land/std@v0.51.0/fs/mod.ts",
+    "oak": "https://deno.land/x/oak@v4.0.0/mod.ts",
     "react": "https://unpkg.com/es-react",
     "react-dom/server": "https://dev.jspm.io/react-dom/server"
   }
