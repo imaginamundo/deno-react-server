@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React/*, { useState }*/ from "react";
 import Menu from "../components/Menu.jsx";
 
 function Page({ props }) {
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
   
   return (
     <>
@@ -36,7 +36,7 @@ export default Page;`}
         getInitialProps function.
       </p>
       <pre>{JSON.stringify(props, null, 2)}</pre>
-      <h2>useState hook test</h2>
+      {/* <h2>useState hook test</h2>
       <p>
         Clicked {counter} times.
       </p>
@@ -44,7 +44,7 @@ export default Page;`}
         <button onClick={() => setCounter(counter + 1)}>
           Add clicks
         </button>
-      </p>
+      </p> */}
     </>
   );
 }
