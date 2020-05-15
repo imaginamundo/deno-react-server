@@ -4,7 +4,7 @@ Project with the objective to copy Next.js functionalities to Deno.js.
 By the moment we only have the router based on pages, but more things will be added in the near future.
 
 ## Requirements
-Deno 1.0.0-rc3
+Deno 1.0.0
 
 Go to https://deno.land to see how to install Deno.
 
