@@ -26,10 +26,13 @@ export default async (context, next) => {
     context.response.body = await renderToString(
       customError || Error,
       {
-        props: { ...props, error: {
-          status: err.status,
-          message: err.message
-        } },
+        props: {
+          ...props,
+          error: {
+            status: err.status,
+            message: err.message,
+          },
+        },
         route: {
           name: "error",
           path: "/_error",

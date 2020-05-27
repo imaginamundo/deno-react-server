@@ -11,7 +11,7 @@ const customError = await exists("src/pages/_error.jsx");
 if (customError) {
   const [customErrorPageDiagnostics, customErrorPageOutput] = await Deno.bundle(
     "src/pages/_error.jsx",
-  )
+  );
   ErrorPage = customErrorPageOutput;
 } else {
   const [errorPageDiagnostics, errorPageOutput] = await Deno.bundle(
@@ -60,5 +60,6 @@ pageRoutes.forEach(async (page) => {
     `./public/.src/pages${exportPath}.js`,
     encoder.encode(pageOutput),
   );
+
   console.log(`Generated ${page.path} at public/${exportFolder.join("/")}`);
 });

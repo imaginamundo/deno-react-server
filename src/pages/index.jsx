@@ -3,7 +3,7 @@ import Menu from "../components/Menu.jsx";
 
 function Page({ props }) {
   const [counter, setCounter] = React.useState(0);
-  
+
   return (
     <>
       <Menu />
