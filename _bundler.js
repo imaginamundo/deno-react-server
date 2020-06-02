@@ -1,4 +1,4 @@
-import { exists } from "fs";
+import { fs } from "./deps.js";
 import { pageRoutes } from "./_routes.js";
 
 const [browserDiagnostics, browserOutput] = await Deno.bundle(
@@ -6,7 +6,7 @@ const [browserDiagnostics, browserOutput] = await Deno.bundle(
 );
 
 let ErrorPage;
-const customError = await exists("src/pages/_error.jsx");
+const customError = await fs.exists("src/pages/_error.jsx");
 
 if (customError) {
   const [customErrorPageDiagnostics, customErrorPageOutput] = await Deno.bundle(
@@ -48,6 +48,8 @@ pageRoutes.forEach(async (page) => {
 
   const [pageDiagnostics, pageOutput] = await Deno.bundle(
     `./src/pages${importPath}`,
+    {},
+    { lib: ["react"] },
   );
 
   const exportFolder = page.origin.split("/");

@@ -1,4 +1,4 @@
-import { Router } from "oak";
+import { Router } from "../deps.js";
 import { pageRoutes, apiRoutes } from "../_routes.js";
 import renderToString from "../_react/renderToString.jsx";
 
@@ -29,6 +29,7 @@ pageRoutes.forEach(async (route) => {
 
 apiRoutes.forEach(async (route) => {
   const file = await import(".." + route.origin);
+
   router
     .all(route.path, file.default);
 });

@@ -1,4 +1,4 @@
-import { walk } from "fs";
+import { fs } from "./deps.js";
 
 function formatRoute(origin) {
   console.log(origin);
@@ -37,7 +37,7 @@ const pageRoutes = [];
 const apiRoutes = [];
 
 // Walk thought pages
-for await (const file of walk("./src/pages")) {
+for await (const file of fs.walk("./src/pages")) {
   if (file.isFile) {
     const routeObject = formatRoute(file.path);
     if (routeObject) {

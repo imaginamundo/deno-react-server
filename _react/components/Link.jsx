@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "../../deps.js";
 
 function Link({ children, href }) {
   function goTo(e) {

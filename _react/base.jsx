@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "../deps.js";
 
 function Base({ children, props, routes, route }) {
   const pageData = {

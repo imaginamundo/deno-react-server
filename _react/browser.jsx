@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import { ReactDom } from "../deps.js";
 // import { BrowserRouter } from "react-router-dom";
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -10,7 +10,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   routeUrl = routeUrl + ".js";
 
   const { default: Page } = await import(`${routeUrl}`);
-  ReactDOM.hydrate(
+
+  ReactDom.hydrate(
     // <BrowserRouter>
     //   {__routes.map((route) => {
     //     return <Page props={initialProps} />;

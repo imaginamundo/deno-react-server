@@ -1,4 +1,4 @@
-import { send } from "oak";
+import { send } from "../deps.js";
 
 export default async (context) => {
   await send(
@@ -7,5 +7,6 @@ export default async (context) => {
     {
       root: `${Deno.cwd()}/public`,
     },
-  );
+  )
+    .catch((err) => console.log(err));
 };

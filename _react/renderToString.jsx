@@ -1,6 +1,4 @@
-import React from "react";
-import ReactDomServer from "react-dom/server";
-
+import { React, ReactDomServer } from "../deps.js";
 import Base from "./base.jsx";
 
 function renderToString(Page, { props, route, routes }) {

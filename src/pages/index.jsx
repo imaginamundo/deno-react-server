@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "../../deps.js";
 import Menu from "../components/Menu.jsx";
 
 function Page({ props }) {
