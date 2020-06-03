@@ -1,5 +1,5 @@
-import { Router } from "../deps.js";
-import { pageRoutes, apiRoutes } from "../_routes.js";
+import { Router } from "../deps.ts";
+import { pageRoutes, apiRoutes } from "../_routes.ts";
 import renderToString from "../_react/renderToString.jsx";
 
 const router = new Router();

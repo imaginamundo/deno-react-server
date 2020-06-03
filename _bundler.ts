@@ -1,5 +1,5 @@
-import { fs } from "./deps.js";
-import { pageRoutes } from "./_routes.js";
+import { fs } from "./deps.ts";
+import { pageRoutes } from "./_routes.ts";
 
 const [browserDiagnostics, browserOutput] = await Deno.bundle(
   "./_react/browser.jsx",

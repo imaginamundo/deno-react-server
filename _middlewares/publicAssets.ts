@@ -1,4 +1,4 @@
-import { send } from "../deps.js";
+import { send } from "../deps.ts";
 
 export default async (context) => {
   await send(

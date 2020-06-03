@@ -8,7 +8,7 @@ export default async (context, next) => {
     let props;
 
     if (Error.getInitialProps) {
-      await file.default.getInitialProps(context)
+      await Error.getInitialProps(context)
         .then((res) => props = res)
         .catch((error) => err = error);
     } else {

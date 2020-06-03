@@ -1,4 +1,4 @@
-import { fs } from "./deps.js";
+import { fs } from "./deps.ts";
 
 function formatRoute(origin) {
   console.log(origin);
